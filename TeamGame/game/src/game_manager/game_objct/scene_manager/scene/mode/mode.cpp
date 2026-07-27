@@ -79,6 +79,13 @@ void CMode::Update()
 
 #ifdef VIVID_DEBUG
 	
+	// テストでゲームメインへ
+	if (contol::Input(contol::PLAYER_ID::ALL, contol::BUTTON_ID::ACTION_UP)
+		&& contol::InputDPad(contol::PLAYER_ID::ALL, contol::D_PAD_ID::UP))
+	{
+		SCENES.SetNextScene(SCENE_ID::GAMEMAIN);
+	}
+
 #endif // DEBUG
 }
 
