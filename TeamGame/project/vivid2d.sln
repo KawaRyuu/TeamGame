@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37012.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vivid2d", "..\vivid2d\vivid2d.vcxproj", "{F852AE89-C481-4E06-B523-26516B7A128C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game", "..\game\game.vcxproj", "{36D9C7ED-E30F-4948-9DFF-F39F356734A4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "contol", "..\contol\contol.vcxproj", "{FE22AFBF-155D-4EE3-A9A8-7C3C2D639210}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F852AE89-C481-4E06-B523-26516B7A128C}.Debug|x64.ActiveCfg = Debug|x64
+		{F852AE89-C481-4E06-B523-26516B7A128C}.Debug|x64.Build.0 = Debug|x64
+		{F852AE89-C481-4E06-B523-26516B7A128C}.Release|x64.ActiveCfg = Release|x64
+		{F852AE89-C481-4E06-B523-26516B7A128C}.Release|x64.Build.0 = Release|x64
+		{36D9C7ED-E30F-4948-9DFF-F39F356734A4}.Debug|x64.ActiveCfg = Debug|x64
+		{36D9C7ED-E30F-4948-9DFF-F39F356734A4}.Debug|x64.Build.0 = Debug|x64
+		{36D9C7ED-E30F-4948-9DFF-F39F356734A4}.Release|x64.ActiveCfg = Release|x64
+		{36D9C7ED-E30F-4948-9DFF-F39F356734A4}.Release|x64.Build.0 = Release|x64
+		{FE22AFBF-155D-4EE3-A9A8-7C3C2D639210}.Debug|x64.ActiveCfg = Debug|x64
+		{FE22AFBF-155D-4EE3-A9A8-7C3C2D639210}.Debug|x64.Build.0 = Debug|x64
+		{FE22AFBF-155D-4EE3-A9A8-7C3C2D639210}.Release|x64.ActiveCfg = Release|x64
+		{FE22AFBF-155D-4EE3-A9A8-7C3C2D639210}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {785B5E57-BD9C-4D22-A919-49B41F7FFEBC}
+	EndGlobalSection
+EndGlobal
