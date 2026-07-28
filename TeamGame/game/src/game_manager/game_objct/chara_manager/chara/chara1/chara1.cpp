@@ -15,7 +15,7 @@ void CChara1::Initialize(const vivid::Vector2& pos, CHARA_ID id)
 void CChara1::Update()
 {
 	IChara::Update();
-	m_Position.x += 1.0f;
+	m_Position += m_Velocity;
 }
 
 void CChara1::Draw()

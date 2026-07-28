@@ -19,7 +19,7 @@ void CGameMain::Initialize()
 	//PLAYS.InitializeGameData();
 
 	CHARAS.Initialize();
-
+	CHARAS.Create(CHARA_ID::CHARA_1, vivid::Vector2::ZERO);
 	// BGMÇÃçƒê∂
 	//SOUNDS.Play(SOUND_ID::GAMEMAIN_BGM, true);
 

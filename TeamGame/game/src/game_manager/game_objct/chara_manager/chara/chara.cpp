@@ -1,4 +1,5 @@
 #include "chara.h"
+#include "contol.h"
 
 IChara::IChara(int width, int height, std::string data)
 	: m_Width(width)
@@ -26,6 +27,7 @@ void IChara::Initialize(const vivid::Vector2& pos, CHARA_ID id)
 
 void IChara::Update()
 {
+	this->Move();
 }
 
 void IChara::Draw()
@@ -50,5 +52,12 @@ void IChara::SetActive(bool active)
 CHARA_ID IChara::GetCharaID()
 {
 	return m_CharaID;
+}
+
+void IChara::Move()
+{
+	m_Velocity = vivid::Vector2(contol::GetStickValue(contol::PLAYER_ID::ALL,
+		contol::LR_ID::L, contol::XY_ID::X) * 10.0f,
+		contol::GetStickValue(contol::PLAYER_ID::ALL, contol::LR_ID::L, contol::XY_ID::Y) * 10.0f);
 }
 

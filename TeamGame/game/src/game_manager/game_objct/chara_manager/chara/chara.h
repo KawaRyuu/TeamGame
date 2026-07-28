@@ -66,7 +66,10 @@ public:
 
 protected:
 	//// 関数 ////
-
+	/**
+	*	@brief		キャラクターの移動
+	*/
+	void Move();
 
 	//// 定数 ////
 
