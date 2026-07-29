@@ -48,6 +48,10 @@ private:
 
 	//// ’è” //// 	
 
+	static const int	m_max_hp;
+	static const int	m_base_attack;
+	static const float	m_defence;
+	static const float	m_speed;
 
 
 	//// •Ï” //// 

@@ -15,6 +15,7 @@ IChara::IChara(int width, int height, std::string data)
 	, m_CharaID(CHARA_ID::MAX)
 	, m_Velocity(vivid::Vector2::ZERO)
 {
+	this->SetParameter(0, 0, 0.0f, 0.0f);
 }
 
 void IChara::Initialize(const vivid::Vector2& pos, CHARA_ID id)
@@ -54,10 +55,19 @@ CHARA_ID IChara::GetCharaID()
 	return m_CharaID;
 }
 
+void IChara::SetParameter(int max_hp, int attack, float defence, float speed)
+{
+	m_MaxHp = max_hp;
+	m_CurrentHp = m_MaxHp;
+	m_BaseAttack = attack;
+	m_Defence = defence;
+	m_Speed = speed;
+}
+
 void IChara::Move()
 {
 	m_Velocity = vivid::Vector2(contol::GetStickValue(contol::PLAYER_ID::ALL,
-		contol::LR_ID::L, contol::XY_ID::X) * 10.0f,
-		contol::GetStickValue(contol::PLAYER_ID::ALL, contol::LR_ID::L, contol::XY_ID::Y) * 10.0f);
+		contol::LR_ID::L, contol::XY_ID::X) * m_Speed,
+		contol::GetStickValue(contol::PLAYER_ID::ALL, contol::LR_ID::L, contol::XY_ID::Y) * m_Speed);
 }
 

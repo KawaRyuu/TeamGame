@@ -40,6 +40,7 @@ public:
 	*/
 	virtual void Draw();
 
+
 	/**
 	*	@brief		解放
 	*/
@@ -66,6 +67,8 @@ public:
 
 protected:
 	//// 関数 ////
+	void SetParameter(int max_hp, int attack, float defence, float speed);
+
 	/**
 	*	@brief		キャラクターの移動
 	*/
@@ -89,4 +92,10 @@ protected:
 	bool			m_Active;			// アクティブ判定
 	CHARA_ID		m_CharaID;			// エフェクトのID
 	vivid::Vector2	m_Velocity;			// 速度
+
+	int				m_MaxHp;			// 最大体力
+	int				m_CurrentHp;		// 現在の体力
+	int				m_BaseAttack;		// 攻撃力の基準
+	float			m_Defence;			// 防御力
+	float			m_Speed;			// 速度
 };
