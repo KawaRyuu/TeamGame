@@ -208,6 +208,7 @@
     <ClInclude Include="src\game_manager\game_objct\chara_manager\chara\chara.h" />
     <ClInclude Include="src\game_manager\game_objct\chara_manager\chara\chara1\chara1.h" />
     <ClInclude Include="src\game_manager\game_objct\chara_manager\chara\chara_id.h" />
+    <ClInclude Include="src\game_manager\game_objct\chara_manager\chara\chara_state.h" />
     <ClInclude Include="src\game_manager\game_objct\chara_manager\chara_manager.h" />
     <ClInclude Include="src\game_manager\game_objct\effect_manager\effect\block_vanish_effect\block_vanish_effect.h" />
     <ClInclude Include="src\game_manager\game_objct\effect_manager\effect\effect.h" />

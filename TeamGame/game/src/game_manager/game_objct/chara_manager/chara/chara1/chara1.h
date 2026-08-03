@@ -1,7 +1,7 @@
 /**
 *	@file	chara1.h
 *	@brief	キャラクターテスト１
-*	@author	R.Kawakami
+*	@author	Ryuuki.Kawakami
 */
 #pragma once
 

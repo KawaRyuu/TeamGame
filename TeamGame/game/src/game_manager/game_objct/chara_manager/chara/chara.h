@@ -1,12 +1,13 @@
 /**
 *	@file	chara.h
 *	@brief	キャラクターのベースクラス
-*	@author	R.Kawakami
+*	@author	Ryuuki.Kawakami
 */
 #pragma once
 
 #include "vivid.h"
 #include "chara_id.h"
+#include "chara_state.h"
 
 class IChara
 {
@@ -68,14 +69,49 @@ public:
 protected:
 	//// 関数 ////
 	void SetParameter(int max_hp, int attack, float defence, float speed);
+	void StateChange(CHARA_STATE state);
+
+	/**
+	*	@brief		キャラクターの待機
+	*/
+	void Wait();
 
 	/**
 	*	@brief		キャラクターの移動
 	*/
 	void Move();
 
-	//// 定数 ////
+	/**
+	*	@brief		キャラクターのガード
+	*/
+	void Guard();
 
+	/**
+	*	@brief		キャラクターの特性
+	*/
+	void Skill();
+
+	/**
+	*	@brief		キャラクターがアイテムを使用する
+	*/
+	void UseItem();
+
+	/**
+	*	@brief		キャラクターの通常攻撃
+	*/
+	void NormalAttack();
+
+	/**
+	*	@brief		キャラクターの必殺
+	*/
+	void SureKill();
+
+	/**
+	*	@brief		キャラクター_復活
+	*/
+	void Resurrection();
+
+	//// 定数 ////
 
 
 	//// 変数 ////
@@ -98,4 +134,5 @@ protected:
 	int				m_BaseAttack;		// 攻撃力の基準
 	float			m_Defence;			// 防御力
 	float			m_Speed;			// 速度
+	CHARA_STATE		m_CharaState;		// キャラクターの状態
 };

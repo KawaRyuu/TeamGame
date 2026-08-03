@@ -1,5 +1,6 @@
 #include "chara.h"
 #include "contol.h"
+#include "chara_state.h"
 
 IChara::IChara(int width, int height, std::string data)
 	: m_Width(width)
@@ -14,6 +15,7 @@ IChara::IChara(int width, int height, std::string data)
 	, m_Active(true)
 	, m_CharaID(CHARA_ID::MAX)
 	, m_Velocity(vivid::Vector2::ZERO)
+	, m_CharaState(CHARA_STATE::WAIT)
 {
 	this->SetParameter(0, 0, 0.0f, 0.0f);
 }
@@ -28,7 +30,7 @@ void IChara::Initialize(const vivid::Vector2& pos, CHARA_ID id)
 
 void IChara::Update()
 {
-	this->Move();
+	this->StateChange(m_CharaState);
 }
 
 void IChara::Draw()
@@ -64,10 +66,76 @@ void IChara::SetParameter(int max_hp, int attack, float defence, float speed)
 	m_Speed = speed;
 }
 
+void IChara::StateChange(CHARA_STATE state)
+{
+	switch (state)
+	{
+	case CHARA_STATE::WAIT:
+		this->Wait();
+		break;
+	case CHARA_STATE::MOVE:
+		this->Move();
+		break;
+	case CHARA_STATE::GUARD:
+		this->Guard();
+		break;
+	case CHARA_STATE::SKILL:
+		this->Skill();
+		break;
+	case CHARA_STATE::USE_ITEM:
+		this->UseItem();
+		break;
+	case CHARA_STATE::NOMAL_ATTACK:
+		this->NormalAttack();
+		break;
+	case CHARA_STATE::SURE_KILL:
+		this->SureKill();
+	case CHARA_STATE::RESURRECTION:
+		this->Resurrection();
+		break;
+	}
+}
+
+void IChara::Wait()
+{
+	// 待機処理
+}
+
 void IChara::Move()
 {
 	m_Velocity = vivid::Vector2(contol::GetStickValue(contol::PLAYER_ID::ALL,
 		contol::LR_ID::L, contol::XY_ID::X) * m_Speed,
 		contol::GetStickValue(contol::PLAYER_ID::ALL, contol::LR_ID::L, contol::XY_ID::Y) * m_Speed);
+}
+
+void IChara::Guard()
+{
+	// ガード処理
+}
+
+void IChara::Skill()
+{
+	// 特性処理
+}
+
+void IChara::UseItem()
+{
+	//アイテムを使用する処理
+}
+
+void IChara::NormalAttack()
+{
+	// 通常攻撃処理
+}
+
+void IChara::SureKill()
+{
+	// 必殺技処理
+}
+
+
+void IChara::Resurrection()
+{
+	// 復活処理
 }
 

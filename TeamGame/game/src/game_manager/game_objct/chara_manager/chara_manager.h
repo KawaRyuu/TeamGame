@@ -1,7 +1,7 @@
 /**
 *	@file	chara_manager.h
 *	@brief	生成するキャラクターのマネージャー
-*	@author	R.Kawakami
+*	@author	Ryuuki.Kawakami
 */
 
 #pragma once

@@ -1,7 +1,7 @@
 /**
 *	@file	chara_id.h
 *	@brief	キャラクターのID
-*	@author	R.Kawakami
+*	@author	Ryuuki.Kawakami
 */
 #pragma once
 
