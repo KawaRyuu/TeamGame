@@ -1,6 +1,7 @@
 #include "chara_manager.h"
 #include "chara/chara1/chara1.h"
-
+#include "../AttackManager/AttackManager.h"
+#include <vector>
 
 CCharaManager& CCharaManager::GetInstance()
 {
@@ -14,10 +15,23 @@ void CCharaManager::Initialize()
 	m_Generator[CHARA_ID::CHARA_1] = []() { return new CChara1(); };
 	m_Generator[CHARA_ID::MAX] = []() { return nullptr; };
 	m_CharaList.clear();
+
+	Create(CHARA_ID::CHARA_1, vivid::Vector2(100.0f, 120.0f));
+	Create(CHARA_ID::CHARA_1, vivid::Vector2(220.0f, 120.0f));
 }
 
 void CCharaManager::Update()
 {
+	std::vector<IChara*> targets;
+	targets.reserve(std::distance(m_CharaList.begin(), m_CharaList.end()));
+	
+	for (IChara* c : m_CharaList){
+		//if (c) c->Update();	//全キャラ更新
+		targets.push_back(c);
+	}
+	AttackManager::Instance().Update(targets);
+	//AttackManager::Instance().Update(m_CharaList);
+
 	for (auto it = m_CharaList.begin(); it != m_CharaList.end(); )
 	{
 		(*it)->Update();

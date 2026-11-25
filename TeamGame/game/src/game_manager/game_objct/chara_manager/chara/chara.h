@@ -8,6 +8,7 @@
 #include "vivid.h"
 #include "chara_id.h"
 #include "chara_state.h"
+#include "contol.h"
 
 class IChara
 {
@@ -65,6 +66,29 @@ public:
 	*	@return		自身のキャラクターID
 	*/
 	CHARA_ID GetCharaID();
+
+	/**
+	*	@brief		向きの取得 (右向きならtrue)
+	*/
+	virtual bool IsFacingRight() const { return m_FacingRight; }
+
+	/**
+	*	@brief		向きの取得 (右向きならtrue)
+	*/
+	virtual vivid::Rect GetHurtbox() const;
+
+	/**
+	*	@brief		向きの取得 (右向きならtrue)
+	*/
+	virtual bool IsInvulnerable() const { return false; }
+
+	/**
+	*	@brief		向きの取得 (右向きならtrue)
+	*/
+	virtual void ApplyHit(int, const vivid::Vector2&, CHARA_ID);
+
+	void SetPlayerID(contol::PLAYER_ID pid) { m_PlayerID = pid; }
+	contol::PLAYER_ID GetPlayerID() const { return m_PlayerID; }
 
 protected:
 	//// 関数 ////
@@ -134,5 +158,13 @@ protected:
 	int				m_BaseAttack;		// 攻撃力の基準
 	float			m_Defence;			// 防御力
 	float			m_Speed;			// 速度
-	CHARA_STATE		m_CharaState;		// キャラクターの状態
+	CHARA_STATE		m_CharaState;		// キャラクターの状
+	bool m_FacingRight = true;	// 右向きかどうかのフラグ
+
+	contol::PLAYER_ID m_PlayerID = contol::PLAYER_ID::P1;
+
+	//// デバック用 ////
+	vivid::Vector2	 m_DebugAttackCenter = vivid::Vector2::ZERO;
+	float			 m_DebugAttackRadius = 0.0f;
+	int				 m_DebugAttackTimer = 0;
 };
